@@ -22,5 +22,18 @@
                 <span> Search </span>
             </a>
         </li>
+        <li class="menu-title">Doctors</li>
+        <li>
+            <a href="{{route("doctor.browse")}}">
+                <i data-feather="calendar"></i>
+                <span> New </span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <i data-feather="calendar"></i>
+                <span> Search </span>
+            </a>
+        </li>
     </ul>
 </div>

@@ -18,10 +18,10 @@ return new class extends Migration
             $table->integer("patient_id");
             $table->string("doctor_id");
             $table->string("symptoms");
-            $table->string("findings");
-            $table->string("remarks");
-            $table->string("images");
-            $table->string("status");
+            $table->text("findings")->nullable();
+            $table->text("remarks")->nullable();
+            $table->text("images")->nullable();
+            $table->string("status")->default("on-process");
             $table->timestamps();
         });
     }

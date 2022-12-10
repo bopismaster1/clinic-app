@@ -40,6 +40,7 @@ class Index extends Component
 
     public function newPatient()
     {
+        $data = $this->validate();
         $patient = new Patient();
         $patient->name = $this->name;
         $patient->address = $this->address;
