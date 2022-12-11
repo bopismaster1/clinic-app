@@ -1,4 +1,17 @@
 <div class="wrapper">
+    <style>
+        .img-wrap {
+            position: relative;
+            ...
+        }
+
+        .img-wrap .close {
+            position: absolute;
+            bottom: 10px;
+            z-index: 10;
+            color: maroon;
+        }
+    </style>
     <form wire:submit.prevent='{{ $action }}'>
         <div class="row">
 
@@ -64,11 +77,17 @@
 
                         @if ($images)
                             @foreach ($images as $image)
-                                {{-- <img src="{{ asset('storage/' . $image) }} " /> --}}
-                                <img src="{{ asset('storage/' . $image) }}" alt="$images" class="img-thumbnail">
+                                {{-- <img src="{{ $image->temporaryUrl()}} " class="img-thumbnail"/> --}}
+                                {{-- <img src="{{ asset('storage/' . $image) }}" alt="$images" class="img-thumbnail"> --}}
+                                <div class="img-wrap">
+                                    {{-- <span class="close"><i class="fa-solid fa-trash"></i></span> --}}
+                                    <button type="submit" class=" close btn btn-block btn--md btn-light">Remove Image</button>
+
+                                    <img src="{{ asset('storage/' . $image) }} " class="img-thumbnail" />
+                                </div>
                             @endforeach
                         @endif
-<br>
+                        <br>
                         <button type="submit" class="btn btn-block btn--md btn-primary">Save Changes</button>
 
                     </div>
